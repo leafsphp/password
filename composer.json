@@ -2,16 +2,18 @@
     "name": "leafs/password",
     "description": "Leaf PHP password helper",
     "keywords": [
-        "template",
-        "simple templating",
-        "view",
+        "password",
+        "hashing",
+        "security",
         "leaf",
-        "php",
-        "framework"
+        "php"
     ],
-    "homepage": "https://leafphp.netlify.app/#/",
+    "homepage": "https://leafphp.dev",
     "type": "library",
     "license": "MIT",
+    "require": {
+        "php": "^8.2"
+    },
     "authors": [
         {
             "name": "Michael Darko",
@@ -30,6 +32,25 @@
     "extra": {
         "branch-alias": {
             "dev-v5.x": "5.0.x-dev"
+        }
+    },
+    "require-dev": {
+        "leafs/alchemy": "v5.x-dev",
+        "friendsofphp/php-cs-fixer": "^3.66",
+        "pestphp/pest": "*"
+    },
+    "scripts": {
+        "alchemy": "@php vendor/bin/alchemy all",
+        "test": "@php vendor/bin/alchemy test",
+        "lint": "@php vendor/bin/alchemy lint",
+        "fmt": "@php vendor/bin/alchemy fmt",
+        "analyse": "@php vendor/bin/alchemy analyse",
+        "refactor": "@php vendor/bin/alchemy refactor",
+        "ci": "@php vendor/bin/alchemy ci"
+    },
+    "config": {
+        "allow-plugins": {
+            "pestphp/pest-plugin": true
         }
     }
 }
